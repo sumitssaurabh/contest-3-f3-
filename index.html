@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <style>
+      .btn{
+            
+    background-color: black;
+    color: white;
+    /* margin: 16px; */
+    margin-left: 120px;
+    padding: 7px;
+    height: 38px;
+    width: 82px;
+}
+.inputBox{
+    /* margin-left: 120px; */
+    border: 2px solid white;
+    height: 23px;
+    width: 80%;
+}
+
+
+.topnav {
+    background-color: black;
+    overflow: hidden;
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav {
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a  href="">Teacher portal</a>
+      <div class="topnav-right">
+        <a href="">Signup</a>
+        <a href="">Login</a>
+      </div>
+    </div>
+    <h2>Teacher,s Signup</h2>
+    <fieldset>
+      <legend>Form</legend>
+      <form action="login_page.html" class="form" id="form">
+        <!-- <form action="/login.html"> -->
+        <!-- <form> -->
+          <div class="inputbox">
+        <label for="name"><b</b></label>
+        
+        <input
+          type="text"
+          placeholder="Enter name"
+          name="name"
+          id="name"
+          required
+          height="100px"
+          width="300px"
+        />
+        <p id="namePara" style="color: red"></p>
+      </div>
+      
+        <label for="email"><b></b></label>
+        <div class="inputBox">
+        <input
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          id="email"
+          required
+          value="email"
+        />
+        <p id="emailPara" style="color: red"></p>
+      </div>
+      <br>
+        <label for="psw"><b></b></label>
+        <div class="inputBox">
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          id="password"
+          required
+          value="password"
+        />
+        <p id="passwordPara" style="color: red"></p>
+      </div>
+      <br>
+        <label for="confirm-password"><b></b></label>
+        <div class="inputBox">
+        <input
+          type="password"
+          placeholder="confirm-password"
+          name="confirm-password"
+          id="confirmpassword"
+          required
+        />
+        <p id="confirmpasswordPara" style="color: red"></p>
+  </div>
+  <br>
+        <button
+          class="btn"
+          id="submit"
+          onclick="nextpage()"
+          onclick="validate()"
+          ondblclick="passvalue()"
+        >
+          signup
+        </button>
+        <p id="msg"></p>
+        <!-- </form> -->
+
+
+        
+      </form>
+
+    </fieldset>
+
+    <script>
+      function nextpage() {
+        window.location = "login page.html";
+      }
+    </script>
+    <script src="js.js"></script>
+  </body>
+</html>

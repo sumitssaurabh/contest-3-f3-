@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>login page</title>
+    <style>
+      .btn{
+        background-color: black;
+    color: white;
+    /* margin: 16px; */
+    margin-left: 120px;
+    padding: 7px;
+    height: 38px;
+    width: 82px;
+      }
+
+
+      .topnav {
+    background-color: black;
+    overflow: hidden;
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav {
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+    </style>
+  </head>
+  <body>
+
+
+    <div class="topnav">
+      <a  href="">Teacher portal</a>
+      <div class="topnav-right">
+        <a href="">Signup</a>
+        <a href="">Login</a>
+      </div>
+    </div>
+
+
+           <h1>teacher ,s login</h1>
+
+      <fieldset> 
+        <legend></legend> 
+    <label for="email"><b>Email</b></label>
+    <input
+      type="text"
+      placeholder="Enter Email"
+      name="email"
+      id="email"
+      required
+    />
+    <p id="emailPara" style="color: red"></p>
+
+    <label for="psw"><b>Password</b></label>
+    <input
+      type="password"
+      placeholder="Enter Password"
+      name="psw"
+      id="password"
+      required
+    />
+    <p id="passwordPara" style="color: red"></p>
+
+
+
+
+    <button class="btn">login</button>
+
+  </fieldset> 
+    <script>
+      var password = document.getElementById("password");
+      var email = document.getElementById("email");
+
+      let passwordFlag = 0;
+      let confirmPasswordFlag = 0;
+
+      function validate() {
+        if (validateEmail(email)) {
+          document.getElementById("emailPara").innerHTML = "";
+          emailFlag = 1;
+        } else {
+          document.getElementById("emailPara").innerHTML =
+            "Please enter valid email.";
+          emailFlag = 0;
+        }
+
+        if (validatePassword(password)) {
+          document.getElementById("passwordPara").innerHTML = "";
+          passwordFlag = 1;
+        } else {
+          document.getElementById("passwordPara").innerHTML =
+            "please enter valid password";
+          passwordFlag = 0;
+        }
+      }
+
+      function validateEmail(email) {
+        //   console.log("email", email);
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (email.value.match(mailformat)) return true;
+        return false;
+      }
+
+      function validatePassword(password) {
+        console.log("password", password.value);
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        if (password.value === name || password.value === email) return false;
+        var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
+        if (password.value.match(decimal)) return true;
+        else return false;
+      }
+
+
+      document.getElementById("password").innerHTML=localStorage.getItem("textvalue");
+      document.getElementById("email").innerHTML=localStorage.getItem("textvalue");
+    </script>
+     
+
+  </body>
+</html>
